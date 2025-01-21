@@ -1,19 +1,19 @@
-import type { NextConfig } from "next";
+// import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
-  async rewrites() {
-    return [
-      {
-        source: '/api/:path*',
-        destination: 'https://next-ecommerce-template-4.vercel.app/api/:path*',
-      },
-    ];
-  },
-  reactStrictMode: true, // Optional: enables strict mode for better error handling
-  webpack(config) {
-    // Custom Webpack Configurations
-    return config;
+// const nextConfig: NextConfig = {
+//   /* config options here */
+// };
+
+// export default nextConfig;
+
+
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  images: {
+    domains: ['cdn.sanity.io'],
   },
 };
 
-export default nextConfig;
+module.exports = nextConfig;
+
+

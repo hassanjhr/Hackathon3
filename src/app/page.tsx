@@ -1,7 +1,5 @@
 
 
-
-
 import DiscountItem from "./components/discountitem";
 import FeaturedProducts from "./components/feature";
 import HeroSection from "./components/hero";
@@ -13,12 +11,10 @@ import Sponsors from "./components/sponsors";
 import SubscribeSection from "./components/subcribesection";
 import TopCategories from "./components/topcategories";
 import TrendingProducts from "./components/trendingproducts";
+import ProductCards from "./products/page";
 
 
-export default async function Home() {
-
-
-
+export default function Home() {
   return (
     <div>
     <HeroSection/>
@@ -32,6 +28,7 @@ export default async function Home() {
     <SubscribeSection/>
     <Sponsors/>
     <LatestBlog/>
+    <ProductCards/>
 
     </div>
   );
