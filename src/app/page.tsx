@@ -1,5 +1,7 @@
 
 
+
+
 import DiscountItem from "./components/discountitem";
 import FeaturedProducts from "./components/feature";
 import HeroSection from "./components/hero";
@@ -13,7 +15,10 @@ import TopCategories from "./components/topcategories";
 import TrendingProducts from "./components/trendingproducts";
 
 
-export default function Home() {
+export default async function Home() {
+
+
+
   return (
     <div>
     <HeroSection/>
