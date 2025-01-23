@@ -9,6 +9,9 @@ export default {
       title: 'Name',
       validation: (Rule: any) => Rule.required().error('Name is required'),
     },
+
+
+
     {
       name: 'image',
       type: 'image',
@@ -61,5 +64,41 @@ export default {
       },
       validation: (Rule: any) => Rule.required().error('Category is required'),
     },
+
+    // {
+    // name: "slug",
+    // type: "slug",
+    // title: "Slug",
+    // options: {
+    //   source: "name",
+    //   maxLength: 96,
+    // },
+    // },
+
+    {
+      name: "slug",
+      type: "slug",
+      title: "Slug",
+      options: {
+        source: "name",
+        maxLength: 96,
+      },
+      validation: (Rule: any) =>
+        Rule.required().error('Slug is required')
+        .custom((slug: { current?: string }, context: any) => {
+          const isValid = /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug?.current || '');
+          if (!isValid) {
+            return 'Slug can only contain lowercase letters, numbers, and hyphens';
+          }
+          return true;
+        }),
+    },
+    
+
+
   ],
 };
+
+
+
+

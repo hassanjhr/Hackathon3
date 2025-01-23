@@ -16,7 +16,7 @@ const sanity = sanityClient({
 interface Product {
   _id: string;
   name: string;
-  price: number;
+  price: number | string;
   description: string;
   discountPercentage: number;
   imageUrl: string;
@@ -75,25 +75,30 @@ const ProductCards: React.FC = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {products.map((product) => (
-          <div key={product._id} className="bg-white shadow-md rounded-lg p-4 hover:shadow-lg transition-shadow duration-300">
+          <div
+            key={product._id}
+            className="bg-white shadow-md rounded-lg p-4 flex flex-col justify-between hover:shadow-lg transition-shadow duration-300"
+          >
             {/* Product Image */}
             <Image
               src={product.imageUrl || "/placeholder-image.png"}
-              alt={product.name || "Product image"} // Add fallback alt text
+              alt={product.name || "Product image"}
               width={300}
               height={300}
               className="w-full object-cover rounded-md"
             />
 
             {/* Product Details */}
-            <div className="mt-4">
+            <div className="mt-4 flex flex-col flex-grow">
               <h2 className="text-lg font-semibold">{product.name}</h2>
               <p className="text-gray-800 mt-2 text-sm">{truncateDescription(product.description)}</p>
 
               {/* Price and Discount */}
               <div className="flex justify-between items-center mt-4">
                 <div>
-                  <p className="text-slate-600 font-bold">${product.price}</p>
+                  <p className="text-slate-600 font-bold">
+                    ${Number(product.price).toFixed(2)}
+                  </p>
                   {product.discountPercentage > 0 && (
                     <p className="text-sm text-red-500">{product.discountPercentage}% off</p>
                   )}
@@ -110,15 +115,15 @@ const ProductCards: React.FC = () => {
                   ))}
                 </div>
               )}
-
-              {/* Add to Cart Button */}
-              <button
-                className="mt-4 w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700"
-                onClick={() => addToCart(product)}
-              >
-                Add to Cart
-              </button>
             </div>
+
+            {/* Add to Cart Button */}
+            <button
+              className="mt-4 w-full bg-[#7E33E0] text-white py-2 rounded-md hover:bg-purple-700 text-sm lg:text-base"
+              onClick={() => addToCart(product)}
+            >
+              Add to Cart
+            </button>
           </div>
         ))}
       </div>
@@ -136,11 +141,13 @@ const ProductCards: React.FC = () => {
               >
                 <div>
                   <h3 className="text-medium font-bold">{item.name}</h3>
-                  <p className="text-sm text-blue-600">${Number(item.price).toFixed(2)}</p> 
+                  <p className="text-sm text-blue-600">
+                    ${Number(item.price).toFixed(2)}
+                  </p>
                 </div>
                 <Image
                   src={item.imageUrl || "/placeholder-image.png"}
-                  alt={item.name || "Product image"}  
+                  alt={item.name || "Product image"}
                   width={50}
                   height={50}
                   className="rounded-md"
@@ -157,6 +164,7 @@ const ProductCards: React.FC = () => {
 };
 
 export default ProductCards;
+
 
 
 
