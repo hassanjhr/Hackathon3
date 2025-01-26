@@ -17,7 +17,7 @@ const Footer = () => {
                 placeholder="Enter Email Address"
                 className="px-3 py-1 border rounded-l-md text-sm w-full max-w-[150px] md:max-w-[150px]"
               />
-              <button className="bg-[#FB2E86] text-white px-3 py-1 text-sm rounded-r-md">
+              <button className="bg-gradient-to-r from-[#7E33E0] to-[#FB2E86]    text-white px-3 py-1 text-sm rounded-r-md">
                 Sign Up
               </button>
             </div>

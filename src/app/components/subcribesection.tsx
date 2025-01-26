@@ -19,7 +19,7 @@ const SubscribeSection = () => {
         <h2 className="text-2xl sm:text-3xl font-bold text-[#151875] mb-4 max-w-[574px]">
           Get Latest Update By Subscribe Our Newsletter
         </h2>
-        <Link href="/shop"><button className="bg-[#FB2E86] lg:h-[49px] lg:w-[173px] mt-[10px] text-white px-6 py-2  text-[17px] hover:bg-[#e0226f] transition">
+        <Link href="/shop"><button className="bg-gradient-to-r from-[#7E33E0] to-[#FB2E86] font-semibold lg:h-[49px] lg:w-[173px] mt-[10px] text-white px-6 py-2  text-[17px] hover:bg-[#e0226f] transition">
           Shop Now
         </button></Link>
       </div>

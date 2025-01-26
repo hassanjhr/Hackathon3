@@ -33,7 +33,7 @@ const HeroSection = () => {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in
             est adipiscing in phasellus non in justo.
           </p>
-          <Link href="/products"><button className="mt-6 px-6 py-2 bg-[#FB2E86] text-white rounded text-sm lg:text-base">
+          <Link href="/products"><button   className='bg-gradient-to-r from-[#7E33E0] to-[#FB2E86] text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:shadow-lg hover:scale-110 transition-transform duration-300 ease-in-out mt-4'>
             Shop Now
           </button></Link>
         </div>

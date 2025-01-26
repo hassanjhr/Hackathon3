@@ -65,6 +65,16 @@ export default {
       validation: (Rule: any) => Rule.required().error('Category is required'),
     },
 
+    {
+      name: 'tags',
+      type: 'array',
+      title: 'Tags',
+      of: [{ type: 'string' }],
+      options: {
+        layout: 'tags',
+      },
+    },
+
     // {
     // name: "slug",
     // type: "slug",

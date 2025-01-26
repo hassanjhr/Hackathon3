@@ -1,35 +1,26 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { Product } from "../../../types/product";
+import { client } from "@/utils/sanity";
+import { fourTrending } from "@/sanity/lib/queries"; // Update with the correct query for all products
 import Image from "next/image";
-import chair1 from "@/app/assets/1.png";
-import chair2 from "@/app/assets/2.png";
-import chair3 from "@/app/assets/3.png";
-import chair4 from "@/app/assets/4.png";
-import clock from "@/app/assets/clock.png";
-import furniture from "@/app/assets/furniture.png";
-import chair5 from "@/app/assets/5.png";
-import chair6 from "@/app/assets/6.png";
-import chair7 from "@/app/assets/7.png";
-
-
+import { urlForImage } from "@/sanity/lib/image";
+import Link from "next/link";
 
 const TrendingProducts = () => {
-  const trendingProducts = [
-    { id: 1, name: "Cantilever chair", price: "$26.00", sale: "$40.00", image: chair1 },
-    { id: 2, name: "Cantilever chair", price: "$26.00", sale: "$40.00", image: chair2 },
-    { id: 3, name: "Cantilever chair", price: "$26.00", sale: "$40.00", image: chair3 },
-    { id: 4, name: "Cantilever chair", price: "$26.00", sale: "$40.00", image: chair4 },
-  ];
+  const [products, setProducts] = useState<Product[]>([]);
 
-  const featuredCollections = [
-    { id: 1, name: "Executive Seat chair", price: "$32.00", image: chair5 },
-    { id: 2, name: "Executive Seat chair", price: "$32.00", image: chair6 },
-    { id: 3, name: "Executive Seat chair", price: "$32.00", image: chair7 },
-  ];
+  useEffect(() => {
+    async function fetchProducts() {
+      const fetchedProducts: Product[] = await client.fetch(fourTrending); // Fetch all products
+      setProducts(fetchedProducts);
+    }
+    fetchProducts();
+  }, []);
 
   return (
-    <div className="bg-white py-12">
+    <div className="bg-white py-14">
       <div className="max-w-[1200px] mx-auto px-4">
         {/* Section Title */}
         <h2 className="text-center text-2xl md:text-3xl font-bold text-[#151875] mb-8">
@@ -37,92 +28,39 @@ const TrendingProducts = () => {
         </h2>
 
         {/* Product Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          {trendingProducts.map((product) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {products.map((product) => (
             <div
-              key={product.id}
-              className="border border-gray-300 shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-shadow h-[350px] w-[270px] max-w-full mx-auto flex flex-col"
+              key={product._id}
+              className="border border-gray-300 shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 flex flex-col justify-between h-[350px] sm:h-[300px] md:h-[350px] w-full mx-auto hover:bg-[#F8F9FB]"
             >
-              <div className="bg-[#F5F5F7] h-[70%] flex items-center justify-center">
-                <Image
-                  src={product.image}
-                  alt={product.name}
-                  className="max-h-full object-contain p-4"
-                />
-              </div>
-              <div className="bg-white px-4 py-6 text-center flex-1">
-                <h3 className="text-sm font-bold text-[#151875] truncate">{product.name}</h3>
-                <div className="text-sm py-2">
-                  <span className="text-[#151875]">{product.price}</span>
-                  <span className="text-[#FB2E86] line-through ml-2">{product.sale}</span>
+              <Link href={`/product/${product.slug.current}`}>
+                <div className="bg-[#F5F5F7] h-[70%] flex items-center justify-center transition-all duration-300 ease-in-out group-hover:translate-y-4">
+                  {product.image && (
+                    <Image
+                      src={urlForImage(product.image).url()}
+                      alt={product.name}
+                      width={270} // Adjust width as needed
+                      height={180} // Reduced height for image
+                      className="max-h-full object-contain p-4 group-hover:scale-110 transition-transform duration-300"
+                    />
+                  )}
                 </div>
-              </div>
-            </div>
-          ))}
-        </div>
 
-        {/* Clock Section */}
-        {/* <div className="mt-12 flex items-center justify-center">
-          <Image src={clock} alt="Clock" className="h-[120px] object-contain" />
-        </div> */}
-
-        {/* Offers and Featured Collection Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-[80px] mt-10">
-          {/* Left Offer */}
-          <div className="bg-[#FFF6FB] flex flex-col justify-between p-6 rounded-lg relative h-[270px] w-full lg:w-[400px]">
-            <div>
-              <h3 className="text-lg lg:text-[26px] font-medium text-[#151875] mb-2">
-                23% off in all products
-              </h3>
-              <a href="#" className="text-[#FB2E86] text-sm font-medium hover:underline">
-                Shop Now
-              </a>
-            </div>
-            <Image
-              src={clock}
-              alt="Clock"
-              className="object-contain mt-4 sm:mt-0 sm:absolute right-4 bottom-4 h-[150px]"
-            />
-          </div>
-
-          {/* Right Offer */}
-          <div className="bg-[#F4F0FC] flex flex-col justify-between p-6 rounded-lg relative h-[270px] w-full lg:w-[400px]">
-            <div>
-              <h3 className="text-lg lg:text-[26px] font-medium text-[#151875] mb-2">
-                23% off in all products
-              </h3>
-              <a href="#" className="text-[#FB2E86] text-sm font-medium hover:underline">
-                View Collection
-              </a>
-            </div>
-            <Image
-              src={furniture}
-              alt="Furniture"
-              className="object-contain mt-4 sm:mt-0 sm:absolute right-4 bottom-4 h-[150px]"
-            />
-          </div>
-
-          {/* Featured Collection */}
-          <div className="bg-white flex flex-col items-start justify-between p-8 rounded-lg h-[270px] w-full">
-            <div className="space-y-4">
-              {featuredCollections.map((item) => (
-                <div
-                  key={item.id}
-                  className="flex items-center bg-white border border-gray-300 rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
-                >
-                  <Image
-                    src={item.image}
-                    alt={item.name}
-                    className="w-[50px] h-[50px] object-contain"
-                  />
-                  <div className="flex flex-col justify-center px-4">
-                    <h4 className="text-sm font-bold text-[#151875] truncate">{item.name}</h4>
-                    <span className="text-[#151875] text-sm font-medium">{item.price}</span>
+                {/* Product Name and Price */}
+                <div className="bg-white px-4 py-3 text-center flex-1 transition-all duration-300 ease-in-out group-hover:translate-y-4">
+                  <h3 className="text-sm font-bold text-[#151875] truncate group-hover:text-[#FB2E86] transition-colors duration-300">
+                    {product.name}
+                  </h3>
+                  <div className="text-sm py-2">
+                    <span className="text-[#151875] group-hover:text-[#FB2E86] transition-colors duration-300">
+                      {product.price}
+                    </span>
                   </div>
                 </div>
-              ))}
+              </Link>
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>

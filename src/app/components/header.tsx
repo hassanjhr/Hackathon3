@@ -57,7 +57,7 @@ const Header = () => {
           </div></Link>
 
           {/* Cart Icon */}
-          <Link href="/products"><div className="p-2 cursor-pointer hidden md:flex">
+          <Link href="/cart"><div className="p-2 cursor-pointer hidden md:flex">
             <LuShoppingCart className="text-lg" />
           </div></Link>
         </div>

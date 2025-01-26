@@ -27,12 +27,12 @@ export default function Home() {
     <ShopexOffer/>
     <ProductFeatures/>
     <TrendingProducts/>
-    <DiscountItem/>
+    {/* <DiscountItem/> */}
     <TopCategories/>
     <SubscribeSection/>
     <Sponsors/>
     <LatestBlog/>
-    <ProductCards/>
+    {/* <ProductCards/> */}
     
     
         </div>
