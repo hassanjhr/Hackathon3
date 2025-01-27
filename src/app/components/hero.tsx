@@ -8,7 +8,7 @@ import Link from "next/link";
 
 const HeroSection = () => {
   return (
-    <div className="bg-[#F2F0FF] py-12">
+    <div className="bg-[#F2F0FF] py-12 ">
       <div className="max-w-[1920px] mx-auto px-6 lg:px-16 flex flex-col lg:flex-row items-center lg:justify-start">
         {/* Lamp Section */}
         <div className="lg:w-1/3 flex justify-start lg:justify-start relative xl:mb-[70px]">
@@ -52,11 +52,11 @@ const HeroSection = () => {
       </div>
 
       {/* Pagination Dots */}
-      <div className="flex justify-center mt-8 space-x-2">
+      {/* <div className="flex justify-center mt-8 space-x-2">
         <div className="w-3 h-3 bg-[#FB2E86] rounded-full"></div>
         <div className="w-3 h-3 bg-[#C4C4C4] rounded-full"></div>
         <div className="w-3 h-3 bg-[#C4C4C4] rounded-full"></div>
-      </div>
+      </div> */}
     </div>
   );
 };

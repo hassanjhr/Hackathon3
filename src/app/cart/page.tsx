@@ -133,7 +133,7 @@ const CartPage = () => {
 
           <button
             onClick={handleProceed}
-            className="w-full md:w-auto px-6 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
+            className='bg-gradient-to-r from-[#7E33E0] to-[#FB2E86] text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:shadow-lg hover:scale-110 transition-transform duration-300 ease-in-out mt-4'
           >
             Proceed to Checkout
           </button>

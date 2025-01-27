@@ -43,3 +43,33 @@ export const updateCartQuantity = (productId : string, quantity : number) => {
 export const getCartItems = () => {
     return JSON.parse(localStorage.getItem('cart') || '[]');
 }
+
+
+
+
+// ................................................................
+
+
+// Add product to wishlist
+export const addToWishlist = (product: Product) => {
+    const wishlist: Product[] = JSON.parse(localStorage.getItem('wishlist') || '[]');
+  
+    const existingProductIndex = wishlist.findIndex(item => item._id === product._id);
+  
+    if (existingProductIndex === -1) {
+      wishlist.push(product);
+      localStorage.setItem('wishlist', JSON.stringify(wishlist));
+    }
+  };
+  
+  // Remove product from wishlist
+  export const removeFromWishlist = (productId: string) => {
+    let wishlist: Product[] = JSON.parse(localStorage.getItem('wishlist') || '[]');
+    wishlist = wishlist.filter(item => item._id !== productId);
+    localStorage.setItem('wishlist', JSON.stringify(wishlist));
+  };
+  
+  // Get wishlist items
+  export const getWishlistItems = () => {
+    return JSON.parse(localStorage.getItem('wishlist') || '[]');
+  };

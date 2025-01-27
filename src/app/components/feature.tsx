@@ -85,6 +85,15 @@ const FeaturedProducts = () => {
             </div>
           ))}
         </div>
+
+        {/* View More Button */}
+        <Link href="/products">
+        <div className=" mx-auto flex justify-center mt-12 space-x-2 ">
+  <button  className="text-[#FB2E86] font-semibold py-2 px-4 rounded-lg shadow-md hover:shadow-lg hover:scale-110 transition-transform duration-300 ease-in-out hover:bg-[#FB2E86] hover:text-white">
+    View More
+  </button>
+</div></Link>
+
       </div>
     </div>
   );
