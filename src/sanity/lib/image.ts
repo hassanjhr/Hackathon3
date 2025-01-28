@@ -27,12 +27,12 @@
 
 import createImageUrlBuilder from '@sanity/image-url';
 import { SanityImageSource } from '@sanity/image-url/lib/types/types';
-import { dataset, projectId } from '../env'; // Assuming these are correctly set
+import { dataset, projectId } from '../env'; 
 
-// Sanity Image URL Builder
+
 const builder = createImageUrlBuilder({ projectId, dataset });
 
-// Helper to generate image URL
+
 export const urlForImage = (source: SanityImageSource) => {
-  return builder.image(source); // This will generate a proper image URL
+  return builder.image(source); 
 };

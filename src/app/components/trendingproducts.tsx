@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { Product } from "../../../types/product";
 import { client } from "@/utils/sanity";
-import { fourTrending } from "@/sanity/lib/queries"; // Update with the correct query for all products
+import { fourTrending } from "@/sanity/lib/queries"; 
 import Image from "next/image";
 import { urlForImage } from "@/sanity/lib/image";
 import Link from "next/link";
@@ -13,7 +13,7 @@ const TrendingProducts = () => {
 
   useEffect(() => {
     async function fetchProducts() {
-      const fetchedProducts: Product[] = await client.fetch(fourTrending); // Fetch all products
+      const fetchedProducts: Product[] = await client.fetch(fourTrending); 
       setProducts(fetchedProducts);
     }
     fetchProducts();
@@ -40,8 +40,8 @@ const TrendingProducts = () => {
                     <Image
                       src={urlForImage(product.image).url()}
                       alt={product.name}
-                      width={270} // Adjust width as needed
-                      height={180} // Reduced height for image
+                      width={270} 
+                      height={180} 
                       className="max-h-full object-contain p-4 group-hover:scale-110 transition-transform duration-300"
                     />
                   )}

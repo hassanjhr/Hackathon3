@@ -30,19 +30,19 @@ const Header = () => {
 
         {/* Right Section: Dropdowns and Icons */}
         <div className="flex items-center gap-4">
-          {/* Language Dropdown
-          <select className="hidden sm:block bg-[#7E33E0] text-white text-[12px] sm:text-[15px] border-none outline-none rounded  py-1 cursor-pointer">
+          {/* Language Dropdown */}
+          <select className="hidden md:block bg-[#7E33E0] text-white text-[12px] sm:text-[15px] border-none outline-none rounded  py-1 cursor-pointer">
             <option value="english">English</option>
             <option value="urdu">Urdu</option>
             <option value="french">French</option>
-          </select> */}
+          </select>
 
           {/* Currency Dropdown */}
-          {/* <select className="hidden sm:block bg-[#7E33E0] text-white text-[12px] sm:text-[15px] border-none outline-none rounded  py-1 cursor-pointer">
+          <select className="hidden md:block bg-[#7E33E0] text-white text-[12px] sm:text-[15px] border-none outline-none rounded  py-1 cursor-pointer">
             <option value="usd">USD</option>
             <option value="eur">EUR</option>
             <option value="pkr">PKR</option>
-          </select> */}
+          </select>
 
           {/* Login */}
           <Link href="/login"><div className="flex items-center space-x-1 cursor-pointer">
@@ -57,8 +57,8 @@ const Header = () => {
           </div></Link>
 
           {/* Cart Icon */}
-          <Link href="/cart"><div className="p-2 cursor-pointer  md:flex">
-            <LuShoppingCart className="text-lg" />
+          <Link href="/cart"><div className="p-2 cursor-pointer  md:flex "> <span className="pr-1 hidden lg:block">Cart</span>  
+            <LuShoppingCart className="text-lg mt-0 lg:mt-1" />
           </div></Link>
         </div>
       </div>

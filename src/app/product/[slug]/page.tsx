@@ -5,6 +5,7 @@ import Image from "next/image";
 import { urlForImage } from "@/sanity/lib/image";
 import AddToCartButton from "@/app/components/AddToCartSection";
 import AddToWishlistButton from "@/app/components/wishList";
+import Link from "next/link";
 
 interface ProductPageProps {
   params: Promise<{ slug: string }>;
@@ -56,7 +57,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
             </h1>
             <p className="leading-relaxed mb-4 mt-2">{product.description}</p>
             <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">
-              {/* Add optional size/color selectors here */}
+              
             </div>
             <div className="flex mt-2 mb-2">
               <span className="mr-3 text-lg font-medium text-gray-600">
@@ -77,13 +78,18 @@ export default async function ProductPage({ params }: ProductPageProps) {
                 {product.price ? `$${product.price}` : "Price Unavailable"}
               </span>
              
-                <AddToCartButton product={product} />              
-              
-              <AddToWishlistButton product={product} />
+              <span className=" "><AddToWishlistButton product={product}  /></span>
 
 
             </div>
+              <span className="mr-2 mt-1 "> <AddToCartButton product={product} /> </span>            
+               <Link href = "/cart" className="mt-1"> <span ><button
+    className='bg-gradient-to-r from-[#7E33E0] to-[#FB2E86] text-white text-base font-semibold py-2 px-4 rounded-lg shadow-md hover:shadow-lg hover:scale-110 transition-transform duration-300 ease-in-out mt-4'>
+      Proceed to Cart
+    </button></span></Link>
+            
           </div>
+          
         </div>
       </div>
     </section>

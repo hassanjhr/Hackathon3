@@ -51,12 +51,7 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Pagination Dots */}
-      {/* <div className="flex justify-center mt-8 space-x-2">
-        <div className="w-3 h-3 bg-[#FB2E86] rounded-full"></div>
-        <div className="w-3 h-3 bg-[#C4C4C4] rounded-full"></div>
-        <div className="w-3 h-3 bg-[#C4C4C4] rounded-full"></div>
-      </div> */}
+      
     </div>
   );
 };

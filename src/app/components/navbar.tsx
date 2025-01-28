@@ -5,7 +5,7 @@ import { IoSearchOutline } from "react-icons/io5";
 import { Product } from "../../../types/product";
 import { client } from "@/utils/sanity";
 import Link from "next/link";
-import { useRouter } from "next/navigation"; // Use next/navigation instead of next/router
+import { useRouter } from "next/navigation"; 
 
 const Navbar = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -13,7 +13,7 @@ const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const router = useRouter(); // Use this for programmatic routing
+  const router = useRouter(); 
 
   // Fetch products from Sanity
   const fetchProducts = async () => {
@@ -58,9 +58,9 @@ const Navbar = () => {
 
   // Handle product click for dynamic routing
   const handleProductClick = (slug: string) => {
-    router.push(`/product/${slug}`); // Dynamic route to product detail page
-    setSearchQuery(""); // Clear search query after selection
-    setIsDropdownOpen(false); // Close dropdown after selecting
+    router.push(`/product/${slug}`); 
+    setSearchQuery(""); 
+    setIsDropdownOpen(false); 
   };
 
   return (
@@ -80,9 +80,9 @@ const Navbar = () => {
             className="text-2xl text-[#0D0E43] focus:outline-none"
           >
             {isMobileMenuOpen ? (
-              <div className="text-3xl">X</div> // Close icon (X)
+              <div className="text-3xl">X</div> 
             ) : (
-              <div className="text-3xl">☰</div> // Hamburger icon
+              <div className="text-3xl">☰</div> 
             )}
           </button>
         </div>

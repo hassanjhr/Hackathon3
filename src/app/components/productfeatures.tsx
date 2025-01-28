@@ -15,10 +15,10 @@ const ProductFeature = () => {
     async function fetchProduct() {
       try {
         const fetchProduct: Product[] = await client.fetch(two);
-        setProduct(Array.isArray(fetchProduct) ? fetchProduct : []); // Ensure response is an array
+        setProduct(Array.isArray(fetchProduct) ? fetchProduct : []); 
       } catch (error) {
         console.error("Error fetching product data:", error);
-        setProduct([]); // Handle errors by setting an empty array
+        setProduct([]);
       }
     }
     fetchProduct();

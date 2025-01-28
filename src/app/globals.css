@@ -20,5 +20,5 @@ body {
 }
 
 main {
-  flex: 1; /* Makes the main content take up the remaining space */
+  flex: 1; 
 }

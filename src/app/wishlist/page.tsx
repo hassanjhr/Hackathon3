@@ -33,10 +33,7 @@ const WishPage = () => {
 
       
 {/*  */}
-      {/* Sponsors Section */}
-      {/* <div className="bg-white py-10 flex justify-center">
-        <Image src={sponsorsImage} alt="Sponsors" className="max-w-[80%] md:max-w-[60%]" />
-      </div> */}
+      
     </div>
 
 

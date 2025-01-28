@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 
-// Importing Images
+
 import ClockImage from "@/app/assets/clock001.png";
 import TickImage from "@/app/assets/tick001.png";
 import ChecklistImage from "@/app/assets/checklist001.png";
@@ -12,10 +12,10 @@ import Link from "next/link";
 const OrderCompleted = () => {
   return (
     <div className="bg-white min-h-screen flex flex-col items-center justify-center relative">
-      {/* Decorative Dashed Line */}
+      
       <div className="absolute top-1/2 w-full border-t border-dashed border-gray-300 transform -translate-y-1/2"></div>
 
-      {/* Left Clock Image */}
+      
       <div className="absolute left-4 md:left-10 top-1/2 transform -translate-y-1/2 hidden lg:block">
         <Image
           src={ClockImage}
@@ -26,7 +26,7 @@ const OrderCompleted = () => {
         />
       </div>
 
-      {/* Right Checklist Image */}
+      
       <div className="absolute right-4 md:right-10 top-1/2 transform -translate-y-1/2 hidden lg:block">
         <Image
           src={ChecklistImage}
@@ -37,9 +37,9 @@ const OrderCompleted = () => {
         />
       </div>
 
-      {/* Center Content */}
+      
       <div className="z-10 text-center">
-        {/* Tick Icon */}
+       
         <div className="flex justify-center items-center mb-6">
           <div className="w-[80px] h-[80px] bg-[#F7F7F7] rounded-full flex items-center justify-center">
             <Image
@@ -52,19 +52,19 @@ const OrderCompleted = () => {
           </div>
         </div>
 
-        {/* Title */}
+        
         <h1 className="text-2xl md:text-3xl font-bold text-[#151875] mb-4">
           Your Order Is Completed!
         </h1>
 
-        {/* Description */}
+        
         <p className="text-sm md:text-base text-[#B7BACB] max-w-[600px] mx-auto mb-6">
           Thank you for your order! Your order is being processed and will be
           completed within 3-6 hours. You will receive an email confirmation
           when your order is completed.
         </p>
 
-        {/* Button */}
+        
         <Link href= "/"><button className="bg-[#FB2E86] text-white px-6 py-3 font-medium hover:bg-[#e0226f] transition">
           Continue Shopping
         </button></Link>

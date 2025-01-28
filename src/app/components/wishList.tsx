@@ -1,4 +1,4 @@
-'use client'; // Add this line at the top to convert this to a Client Component
+'use client'; 
 import React from 'react';
 import Swal from 'sweetalert2';
 import { Product } from '../../../types/product';

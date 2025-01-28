@@ -2,8 +2,8 @@
 
 import React, { useState, useEffect } from "react";
 import { client } from "@/utils/sanity";
-import { lastFour } from "@/sanity/lib/queries"; // Sanity query for fetching products
-import { Product } from "../../../types/product"; // Adjust according to your type
+import { lastFour } from "@/sanity/lib/queries"; 
+import { Product } from "../../../types/product"; 
 import Image from "next/image";
 import { urlForImage } from "@/sanity/lib/image";
 import Link from "next/link";
@@ -31,14 +31,14 @@ const TopCategories = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {categories.map((category) => (
             <div key={category._id} className="flex flex-col items-center w-[250px] mx-auto">
-              {/* Circle (Image Section) - Now the entire circle is a link */}
+              
               <Link href={`/product/${category.slug.current}`}>
                 <div className="relative flex justify-center items-center rounded-full bg-[#F6F7FB] w-[250px] h-[250px] transition-transform hover:scale-105 border-4 border-[#7E33E0] hover:bg-[#9877E7]">
                   <Image
                     src={urlForImage(category.image).url()}
                     alt={category.name}
                     className="w-[120px] h-[120px] object-contain"
-                    width={120} // Set the width and height for optimization
+                    width={120} 
                     height={120}
                   />
 
@@ -57,7 +57,7 @@ const TopCategories = () => {
           ))}
         </div>
 
-        {/* Pagination Dots */}
+        
       </div>
     </div>
   );
