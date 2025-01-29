@@ -1,5 +1,6 @@
 import { client } from '../../sanity/lib/client'; 
-import BlogCard from "./blogcard";    
+import BlogCard from './blogcard';
+
 
 interface BlogProps {
   blogs: Array<{
