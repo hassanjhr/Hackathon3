@@ -1,0 +1,11 @@
+Test Case ID,Test Case Description,Test Steps,Expected Result,Actual Result,Status,Severity Level,Assigned To,Remarks
+Test001,Validate add to cart functionality,Add product to cart > Verify cart contents,Product is added to the cart and cart contents updated,Product added to cart successfully,Passed,High,Ameen Alam,Functionality working properly
+Test002,Test cart display,Open cart > Verify cart items,Cart displays all added products,Cart displays products correctly,Passed,High,Ameen Alam,No issues found
+Test003,Test cart item quantity functionality,Increase/decrease product quantity > Verify cart,Cart should update the quantity of the product,Quantity updated as expected,Passed,Medium,Ameen Alam,Works as expected
+Test004,Test product removal from cart,Remove product from cart > Verify cart contents,Product is removed from the cart successfully,Product removed correctly,Passed,High,Ameen Alam,Functionality working properly
+Test005,Ensure checkout button is functional,Click on checkout button > Check if checkout page opens,Checkout page opens with correct cart details,Checkout page opens correctly,Passed,High,Ameen Alam,No issues found
+Test006,Test cart total calculation,Add multiple products > Verify total price,Cart total price is calculated correctly,Total price matches expected value,Passed,Medium,Ameen Alam,Works as expected
+Test007,Ensure responsiveness on mobile,Resize browser > Check layout,Cart page adjusts properly on mobile devices,Layout adjusts as expected,Passed,Medium,Ameen Alam,Test successful
+Test008,Test error handling during checkout,Enter invalid payment details > Try to checkout,Error message displayed for invalid payment details,Error message displayed correctly,Passed,High,Ameen Alam,Handled gracefully
+Test009,Test page load time,Open product page > Measure load time,Page should load within 3 seconds,Page loaded in 2.5 seconds,Passed,Low,Ameen Alam,Works as expected
+Test010,Test product filter functionality,Apply product filter > Verify displayed products,Only products matching the filter criteria are displayed,Products filtered correctly,Passed,Medium,Ameen Alam,Test successful
