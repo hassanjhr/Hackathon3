@@ -59,7 +59,7 @@ async function LatestBlog() {
                         <h2 className="tracking-widest text-xs title-font font-medium text-white mb-1">
                           Insights
                         </h2>
-                        <h1 className="title-font text-lg font-medium text-white mb-3">
+                        <h1 className="title-font text-lg font-medium text-black mb-3">
                           {blog.title}
                         </h1>
                         <p className="leading-relaxed text-gray-300 mb-3 line-clamp-3">
@@ -68,7 +68,7 @@ async function LatestBlog() {
                         <div className="flex items-center flex-wrap">
                           <Link
                             href={`/blog/${blog.slug.current}`}
-                            className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0"
+                            className="text-pink-500 inline-flex items-center md:mb-2 lg:mb-0"
                           >
                             Learn More
                           </Link>

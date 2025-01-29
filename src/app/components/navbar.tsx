@@ -103,7 +103,7 @@ const Navbar = () => {
             <Link href="/products" className="hover:text-[#FB2E86]">
               Products
             </Link>
-            <Link href="/blog" className="hover:text-[#FB2E86]">
+            <Link href="/blogpage" className="hover:text-[#FB2E86]">
               Blog
             </Link>
             <Link href="/faq" className="hover:text-[#FB2E86]">
