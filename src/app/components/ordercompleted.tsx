@@ -59,13 +59,13 @@ const OrderCompleted = () => {
 
         
         <p className="text-sm md:text-base text-[#B7BACB] max-w-[600px] mx-auto mb-6">
-          Thank you for your order! Your order is being processed and will be
-          completed within 3-6 hours. You will receive an email confirmation
+        Thank you for your order! Your order is being processed and will be
+          completed within 5-7 days. You will receive an email confirmation
           when your order is completed.
         </p>
 
         
-        <Link href= "/"><button className="bg-[#FB2E86] text-white px-6 py-3 font-medium hover:bg-[#e0226f] transition">
+        <Link href= "/"><button className='bg-gradient-to-r from-[#7E33E0] to-[#FB2E86] text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:shadow-lg hover:scale-110 transition-transform duration-300 ease-in-out mt-4'>
           Continue Shopping
         </button></Link>
       </div>
