@@ -71,7 +71,7 @@ const CartPage = () => {
       cancelButtonText: `No`,
     }).then((result) => {
       if (result.isConfirmed) {
-        Swal.fire('Success', 'Your Order has been placed', 'success');
+        Swal.fire('Proceeding to checkout', 'clicking ok to proceed', 'success');
         router.push("/checkout")
         setCartItems([]);
       }
