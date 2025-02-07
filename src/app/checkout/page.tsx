@@ -127,6 +127,41 @@ function CheckOut() {
 
 
 
+        // Stripe
+        async function handleCheckout(cartItems: Product[]) {
+
+    
+            Swal.fire({
+              title: "Checkout?",
+              icon: "question",
+              text: "Please review your cart before proceeding to payment.",
+              showCancelButton: true,
+              confirmButtonText: "Yes",
+              cancelButtonText: "No",
+            }).then(async (result) => {
+              if (result.isConfirmed) {
+                Swal.fire("Success", "Redirecting to payment...", "success");
+          
+          
+              const response = await fetch('/api/checkout',{
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                  cartItems: cartItems,
+                }),
+              })
+          
+              const data = await response.json();
+              window.location.href = data.url;
+                console.log(data);
+                }
+              });
+            }
+
+
+
   return (
     <div className='min-h-screen bg-gray-50'>
         <div className='mt-6'>
@@ -320,9 +355,19 @@ function CheckOut() {
        
         className= 'w-full bg-gradient-to-r from-[#7E33E0] to-[#FB2E86] text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:shadow-lg hover:scale-110 transition-transform duration-300 ease-in-out mt-4'
     >
-        Place Order
+        Cash on Delivery
     </button>
+    <p className='mt-4 text-center text-gray-600 text-sm dark:text-gray-400 '>OR</p>
+
+    <button
+            onClick={() => handleCheckout(cartItems)}
+            className='w-full bg-gradient-to-r from-[#7E33E0] to-[#FB2E86] text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:shadow-lg hover:scale-110 transition-transform duration-300 ease-in-out mt-4'
+          >
+            Payment Through Card
+          </button>
 </div>
+
+
 
 
 
